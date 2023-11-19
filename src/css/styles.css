@@ -50,6 +50,15 @@
     }
 }
 
-.hide {
+.breed-select.hide, .hide {
     display: none;
+}
+
+.breed-select.hide ~ .loader {
+    left: 50vw;
+    width: 5rem;
+    height: 5rem;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-right-color: #FF3D00;
 }

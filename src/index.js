@@ -32,6 +32,7 @@ async function handleBreedSelection() {
     displayCatInfo(catData);
   } catch (error) {
     toggleLoader(true);
+    catInfoRef.innerHTML = '';
     iziToast.show(errorMessage);
   } finally {
     toggleLoader(true);
@@ -61,7 +62,7 @@ const initializeApp = async () => {
       const data = breeds.map(({ id, name }) => ({ text: name, value: id }));
       slimSelect.setData([{ placeholder: true, text: '' }, ...data]);
     });
-
+    selectRef.classList.remove('hide');
     selectRef.addEventListener('change', handleBreedSelection);
   } catch (error) {
     toggleLoader(true);
